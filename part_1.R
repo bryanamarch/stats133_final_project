@@ -25,8 +25,8 @@ for(i in 1:length(data$month)){
 
 # Number of Entries Each Month
 month_names <- c('January', 'February', 'March', 'April', 'May', 'June', 
-                 'July', "August", "September", "October", "November",
-                 "December")
+                 'July', 'August', 'September', 'October', 'November',
+                 'December')
 
 monthly_data = NULL
 for (name in month_names){
