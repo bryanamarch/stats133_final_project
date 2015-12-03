@@ -39,5 +39,3 @@ names(av_data_5) <- c('date', 'location', 'type')
 names(air_data_6) <- c('date', 'location', 'type') 
 
 data <- rbind(av_data_5, air_data_6)
-
-data2 <- data
