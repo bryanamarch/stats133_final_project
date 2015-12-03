@@ -5,7 +5,7 @@ av_data_1 <- read.delim('raw_data/aviation_data.txt', header = TRUE, sep = '|', 
 air_data_1 <- read.csv('raw_data/airplane_crashes.csv', stringsAsFactors = FALSE)
 
 # This takes only the airplane data fromt the data frame as opposed to  all aircrafts. 
-av_data_2 <- subset(data_1, Aircraft.Category == ' Airplane '| Aircraft.Category == '  ')
+av_data_2 <- subset(av_data_1, Aircraft.Category == ' Airplane '| Aircraft.Category == '  ')
 air_data_2 <- air_data_1[!grepl('airship', air_data_1$Type), ]
 
 # We will merge these two date tables so that air_data provides information from 1920-1981 and 
