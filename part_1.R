@@ -1,6 +1,5 @@
 #packages needed
 library(stringr)
-library(ggplot2)
 
 # extracting months
 data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
