@@ -42,3 +42,4 @@ data <- rbind(av_data_5, air_data_6)
 
 # Changing the Type column to all lowercase
 data$type <- tolower(data$type)
+
