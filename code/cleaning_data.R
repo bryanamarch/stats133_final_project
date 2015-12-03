@@ -38,8 +38,11 @@ air_data_6 <- subset(air_data_5, Type != '')
 names(av_data_5) <- c('date', 'location', 'type')
 names(air_data_6) <- c('date', 'location', 'type') 
 
+# Now we combine the two data frames. 
 data <- rbind(av_data_5, air_data_6)
 
-# Changing the 'Type' column to all lowercase
+# Changing the 'type' column to all lowercase
 data$type <- tolower(data$type)
 
+# Exporting the 'data' file into the data folder. 
+write.csv(data, file = 'data/data.csv')
