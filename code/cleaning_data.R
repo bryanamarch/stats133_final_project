@@ -40,6 +40,6 @@ names(air_data_6) <- c('date', 'location', 'type')
 
 data <- rbind(av_data_5, air_data_6)
 
-# Changing the Type column to all lowercase
+# Changing the 'Type' column to all lowercase
 data$type <- tolower(data$type)
 
