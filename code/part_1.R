@@ -1,3 +1,10 @@
+# ======================================================================
+# Part 1: Months with Most Airplane Accidents 
+# Description: Here we are looking at the number of accidents that occur
+#              every month to see if there is some pattern or if the
+#              data is all uniform. 
+# ======================================================================
+
 #packages needed
 library(stringr)
 
