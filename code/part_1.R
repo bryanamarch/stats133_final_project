@@ -2,7 +2,10 @@
 library(stringr)
 
 # importing data 
-data <- read.csv('../data/data.csv')
+data <- read.csv('data/data.csv')
+
+# removing first column due to repeated index
+data$X <- NULL
 
 # extracting months
 data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
