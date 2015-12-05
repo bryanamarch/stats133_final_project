@@ -47,7 +47,7 @@ barplot(monthly_data, xlab = 'Months',
         col = '#FD075E')
 
 # Exporting the Graphics
-#PDF
+# PDF
 pdf('../plots_and_graphics/Number_of_Crashes_Each_Month.pdf')
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
@@ -58,7 +58,7 @@ barplot(monthly_data, xlab = 'Months',
         col = '#FD075E')
 dev.off()
 
-#PNG
+# PNG
 png('../plots_and_graphics/Number_of_Crashes_Each_Month.png', res = 96)
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
