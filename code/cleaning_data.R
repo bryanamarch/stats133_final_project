@@ -1,8 +1,8 @@
 
 # First we download the raw data onto R studio: 
 # We will use a numebering convention so that at each modication the number increases by one. 
-av_data_1 <- read.delim('raw_data/aviation_data.txt', header = TRUE, sep = '|', stringsAsFactors = FALSE)
-air_data_1 <- read.csv('raw_data/airplane_crashes.csv', stringsAsFactors = FALSE)
+av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE, sep = '|', stringsAsFactors = FALSE)
+air_data_1 <- read.csv('../rawdata/airplane_crashes.csv', stringsAsFactors = FALSE)
 
 # This takes only the airplane data fromt the data frame as opposed to  all aircrafts. 
 av_data_2 <- subset(av_data_1, Aircraft.Category == ' Airplane '| Aircraft.Category == '  ')
@@ -45,4 +45,4 @@ data <- rbind(av_data_5, air_data_6)
 data$type <- tolower(data$type)
 
 # Exporting the 'data' file into the data folder. 
-write.csv(data, file = 'data/data.csv')
+write.csv(data, file = '../data/data.csv')
