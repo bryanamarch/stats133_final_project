@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# packages needed
-=======
 # ======================================================================
 # Part 1: Months with Most Airplane Accidents 
 # Description: Here we are looking at the number of accidents that occur
@@ -9,7 +6,6 @@
 # ======================================================================
 
 #packages needed
->>>>>>> 0798e4bf23533b94f1005dc282a842b8e5d5e186
 library(stringr)
 
 # function needed 
