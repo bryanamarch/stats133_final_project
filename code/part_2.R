@@ -36,6 +36,8 @@ barplot(table(data$decade), xlab = 'Decades',
         col = '#FD075E')
 
 
+
+
 decade_1980 <- data[data$decade == "1980s", "type" ]
 table(decade_1980)
 
