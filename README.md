@@ -8,5 +8,6 @@ What does each folder contain?:
  - Data: This contains all of the final and cleaned data.
  - Rawdata: This folder contains the inital data that we obtained from the internet.
  - Plots_and_graphics: This has all the plots that we made throught the project in both png and pdf form.
+ - Report: In this folder, we will have a report of all our findings.
  - Resources: The link and information that we used for the analysis of our data.
  - Skeleton: The basis for making differnet directories.
