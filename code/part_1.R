@@ -5,7 +5,7 @@
 #              data is all uniform. 
 # ======================================================================
 
-#packages needed
+# packages needed
 library(stringr)
 
 # importing data 
