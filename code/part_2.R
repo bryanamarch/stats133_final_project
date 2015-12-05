@@ -25,6 +25,34 @@ data$decade <- decade
 # looking at freq of accidents for 
 table(data$decade)
 
+# normalizing data
+amt_dataset1 <- nrow(air_data_6)
+amt_dataset2 <- nrow(av_data_5)
+
+# normalizing accidents amounts by decades function
+norm_decade <- function(x){
+  if(x %in% c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s")){
+    nrow(data[data$decade == x,  ])/amt_dataset1
+  }
+  else{
+    nrow(data[data$decade == x,  ])/amt_dataset2
+  }
+}
+
+norm_decade_1920 <- norm_decade("1920s")
+norm_decade_1930 <- norm_decade("1930s")
+norm_decade_1940 <- norm_decade("1940s")
+norm_decade_1950 <- norm_decade("1950s")
+norm_decade_1960 <- norm_decade("1960s")
+norm_decade_1970 <- norm_decade("1970s")
+norm_decade_1980 <- norm_decade("1980s")
+norm_decade_1990 <- norm_decade("1990s")
+norm_decade_2000 <- norm_decade("2000s")
+norm_decade_2010 <- norm_decade("2010s")
+
+vec_norm_decade <- c(norm_decade_1920, norm_decade_1930,  norm_decade_1940, norm_decade_1950, norm_decade_1960, norm_decade_1970, 
+                     norm_decade_1980, norm_decade_1990, norm_decade_2000, norm_decade_2010)
+
 # Graphing
 decade_names <- c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s")
 barplot(table(data$decade), xlab = 'Decades',
@@ -35,8 +63,12 @@ barplot(table(data$decade), xlab = 'Decades',
         cex.names = .75,
         col = '#FD075E')
 
-
-decade_1980 <- data[data$decade == "1980s", "type" ]
-table(decade_1980)
+barplot(vec_norm_decade, xlab = 'Decades',
+        ylab = 'Proportions of Accidents to Each Dataset',
+        main = 'Normalized Number of Crashes Each Decade',
+        names.arg = decade_names,
+        las = 2,
+        cex.names = .75,
+        col = '#FD075E')
 
 
