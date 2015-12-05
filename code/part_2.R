@@ -54,14 +54,8 @@ vec_norm_decade <- c(norm_decade_1920, norm_decade_1930,  norm_decade_1940, norm
                      norm_decade_1980, norm_decade_1990, norm_decade_2000, norm_decade_2010)
 
 # Graphing
-decade_names <- c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s")
-barplot(table(data$decade), xlab = 'Decades',
-        ylab = 'Number of Accidents',
-        main = 'Number of Crashes Each Decade',
-        names.arg = decade_names,
-        las = 2,
-        cex.names = .75,
-        col = '#FD075E')
+decade_names <- c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s",
+                  "1980s", "1990s", "2000s", "2010s")
 
 barplot(vec_norm_decade, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
@@ -69,6 +63,29 @@ barplot(vec_norm_decade, xlab = 'Decades',
         names.arg = decade_names,
         las = 2,
         cex.names = .75,
-        col = '#FD075E')
+        col = '#FFAC0E')
+
+# Exporting the Graphics
+# PDF
+pdf('plots_and_graphics/Normalized_Number_of_Crashes_Each_Decade.pdf')
+barplot(vec_norm_decade, xlab = 'Decades',
+        ylab = 'Proportions of Accidents to Each Dataset',
+        main = 'Normalized Number of Crashes Each Decade',
+        names.arg = decade_names,
+        las = 2,
+        cex.names = .75,
+        col = '#FFAC0E')
+dev.off()
+
+# PNG
+png('plots_and_graphics/Normalized_Number_of_Crashes_Each_Decade.png', res = 96)
+barplot(vec_norm_decade, xlab = 'Decades',
+        ylab = 'Proportions of Accidents to Each Dataset',
+        main = 'Normalized Number of Crashes Each Decade',
+        names.arg = decade_names,
+        las = 2,
+        cex.names = .75,
+        col = '#FFAC0E')
+dev.off()
 
 
