@@ -9,7 +9,7 @@
 library(stringr)
 
 # function needed 
-source(num_name)
+source('code/num_name.R')
 
 # importing data 
 data <- read.csv('data/data.csv')
