@@ -67,7 +67,7 @@ barplot(vec_norm_decade, xlab = 'Decades',
 
 # Exporting the Graphics
 # PDF
-pdf('plots_and_graphics/Normalized_Number_of_Crashes_Each_Decade.pdf')
+pdf('plots_and_graphics/normalized_number_of_crashes_each_decade.pdf')
 barplot(vec_norm_decade, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
         main = 'Normalized Number of Crashes Each Decade',
@@ -78,7 +78,7 @@ barplot(vec_norm_decade, xlab = 'Decades',
 dev.off()
 
 # PNG
-png('plots_and_graphics/Normalized_Number_of_Crashes_Each_Decade.png', res = 96)
+png('plots_and_graphics/normalized_number_of_crashes_each_decade.png', res = 96)
 barplot(vec_norm_decade, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
         main = 'Normalized Number of Crashes Each Decade',
