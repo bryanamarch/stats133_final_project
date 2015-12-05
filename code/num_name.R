@@ -1,4 +1,8 @@
-
+# ======================================================================
+# Function: num_name
+# Description: This is a function that we created to take the month
+#              in numeric form and change it into the month in words. 
+# ======================================================================
 
 num_name <- function (dates){
   month = NULL
