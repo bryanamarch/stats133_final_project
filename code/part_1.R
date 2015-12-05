@@ -1,5 +1,8 @@
-#packages needed
+# packages needed
 library(stringr)
+
+# function needed 
+source(num_name)
 
 # importing data 
 data <- read.csv('../data/data.csv')
@@ -7,24 +10,9 @@ data <- read.csv('../data/data.csv')
 # extracting months
 data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
 
-# labeling months with words
-month = NULL
-for(i in 1:length(data$month)){     
-  word = switch(data$month[i], 
-                'January',
-                'February',
-                'March',
-                'April',
-                'May', 
-                'June', 
-                'July', 
-                'August',
-                'September',
-                'October', 
-                'November',
-                'December')
-  month = c(month, word)
-}
+# labeling months with words using the num_name function. 
+dates <- data$date
+month <- num_name(dates)
 
 # Number of Entries Each Month
 month_names <- c('January', 'February', 'March', 'April', 'May', 'June', 

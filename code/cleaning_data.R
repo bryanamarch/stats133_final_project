@@ -45,4 +45,4 @@ data <- rbind(av_data_5, air_data_6)
 data$type <- tolower(data$type)
 
 # Exporting the 'data' file into the data folder. 
-write.csv(data, file = '../data/data.csv')
+write.csv(data, file = 'data/data.csv')
