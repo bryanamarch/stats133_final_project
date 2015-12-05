@@ -89,3 +89,5 @@ barplot(vec_norm_decade, xlab = 'Decades',
 dev.off()
 
 
+
+
