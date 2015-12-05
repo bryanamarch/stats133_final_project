@@ -1,4 +1,3 @@
-
 # exporting decades games csv
 for(i in 1:length(decade_names)){
   filename = paste(paste("nflweather", decade_names[i], sep = ""), "csv", sep = ".")
