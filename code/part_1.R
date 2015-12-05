@@ -1,11 +1,25 @@
+<<<<<<< HEAD
 # packages needed
+=======
+# ======================================================================
+# Part 1: Months with Most Airplane Accidents 
+# Description: Here we are looking at the number of accidents that occur
+#              every month to see if there is some pattern or if the
+#              data is all uniform. 
+# ======================================================================
+
+#packages needed
+>>>>>>> 0798e4bf23533b94f1005dc282a842b8e5d5e186
 library(stringr)
 
 # function needed 
 source(num_name)
 
 # importing data 
-data <- read.csv('../data/data.csv')
+data <- read.csv('data/data.csv')
+
+# removing first column due to repeated index
+data$X <- NULL
 
 # extracting months
 data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
@@ -35,8 +49,8 @@ barplot(monthly_data, xlab = 'Months',
         col = '#FD075E')
 
 # Exporting the Graphics
-#PDF
-pdf('../plots_and_graphics/Number_of_Crashes_Each_Month.pdf')
+# PDF
+pdf('plots_and_graphics/Number_of_Crashes_Each_Month.pdf')
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
         main = 'Number of Crashes Each Month',
@@ -46,8 +60,8 @@ barplot(monthly_data, xlab = 'Months',
         col = '#FD075E')
 dev.off()
 
-#PNG
-png('../plots_and_graphics/Number_of_Crashes_Each_Month.png', res = 96)
+# PNG
+png('plots_and_graphics/Number_of_Crashes_Each_Month.png', res = 96)
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
         main = 'Number of Crashes Each Month',
