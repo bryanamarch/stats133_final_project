@@ -55,7 +55,7 @@ vec_norm_decade <- c(norm_decade_1920, norm_decade_1930,  norm_decade_1940, norm
 
 # Graphing
 decade_names <- c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s")
-barplot(table(data$decade), xlab = 'Decades',
+barplot(table(data$decade), border = FALSE, xlab = 'Decades',
         ylab = 'Number of Accidents',
         main = 'Number of Crashes Each Decade',
         names.arg = decade_names,
@@ -63,7 +63,7 @@ barplot(table(data$decade), xlab = 'Decades',
         cex.names = .75,
         col = '#FD075E')
 
-barplot(vec_norm_decade, xlab = 'Decades',
+barplot(vec_norm_decade, border = FALSE, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
         main = 'Normalized Number of Crashes Each Decade',
         names.arg = decade_names,
