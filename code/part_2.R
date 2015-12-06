@@ -35,15 +35,8 @@ table(data$decade)
 amt_dataset1 <- nrow(air_data_6)
 amt_dataset2 <- nrow(av_data_5)
 
-# normalizing accidents amounts by decades function
-norm_decade <- function(x){
-  if(x %in% c('1920s', '1930s', '1940s', '1950s', '1960s', '1970s')){
-    nrow(data[data$decade == x,  ])/amt_dataset1
-  }
-  else{
-    nrow(data[data$decade == x,  ])/amt_dataset2
-  }
-}
+# function needed 
+source('code/norm_decade.R')
 
 norm_decade_1920 <- norm_decade('1920s')
 norm_decade_1930 <- norm_decade('1930s')
