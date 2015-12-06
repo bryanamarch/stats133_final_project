@@ -12,7 +12,7 @@ library(stringr)
 source('code/num_name.R')
 
 # importing data 
-data <- read.csv('data/data.csv')
+data <- read.csv('data/data.csv', stringsAsFactors = FALSE)
 
 # removing first column due to repeated index
 data$X <- NULL
@@ -21,7 +21,7 @@ data$X <- NULL
 data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
 
 # labeling months with words using the num_name function. 
-dates <- data$date
+dates <- data$month
 month <- num_name(dates)
 
 # Number of Entries Each Month
@@ -66,3 +66,4 @@ barplot(monthly_data, xlab = 'Months',
         cex.names = .75,
         col = '#FD075E')
 dev.off()
+
