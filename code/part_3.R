@@ -22,6 +22,7 @@ decade_1990 <- subset(data, decade == decade_names[8])
 decade_2000 <- subset(data, decade == decade_names[9])
 decade_2010 <- subset(data, decade == decade_names[10])
 
+# Taking out just the top values
 top3_1920 <- head(sort(table(decade_1920$type), decreasing = TRUE), n = 3)
 top3_1930 <- head(sort(table(decade_1930$type), decreasing = TRUE), n = 3)
 top3_1940 <- head(sort(table(decade_1940$type), decreasing = TRUE), n = 3)
