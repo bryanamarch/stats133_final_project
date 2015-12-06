@@ -75,7 +75,8 @@ top3_1 <- data.frame(type = type_1, freq = freq_1, decade = decade_1)
 
 # plotting the trend
 ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
-  geom_bar( stat = 'identity', position = position_dodge())
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Most Common Planes in Accidents 1940s to 1970s')
 
 # 1980-2010
 decade_names_2 <- decade_names[7:9]
@@ -87,5 +88,35 @@ top3_2 <- data.frame(type = type_2, freq = freq_2, decade = decade_2)
 
 # plotting the trend 
 ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
-  geom_bar( stat = 'identity', position = position_dodge())
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Most Common Planes in Accidents 1980s to 2000s')
+
+# Exporting the Graphics
+# PDF
+pdf('plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.pdf')
+ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Top 3 Planes in Accidents 1940s to 1970s')
+dev.off()
+
+pdf('plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.pdf')
+ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Top 3 Planes in Accidents 1980s to 2000s')
+dev.off()
+
+# PNG
+png('plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.png',
+    res = 96, width = 700, height = 500)
+ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Top 3 Planes in Accidents 1940s to 1970s')
+dev.off()
+
+png('plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.png',
+    res = 96)
+ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
+  geom_bar( stat = 'identity', position = position_dodge())+
+  ggtitle('Top 3 Planes in Accidents 1980s to 2000s')
+dev.off()
 
