@@ -9,9 +9,9 @@
 # First we download the raw data onto R studio: 
 # We will use a numebering convention so that at each modication the number 
 # increases by one. 
-av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE, 
-                        sep = '|', stringsAsFactors = FALSE)
-air_data_1 <- read.csv('../rawdata/airplane_crashes.csv', 
+av_data_1 <- read.delim('rawdata/aviation_data.txt', header = TRUE, 
+                        sep = '|' , stringsAsFactors = FALSE)
+air_data_1 <- read.csv('rawdata/airplane_crashes.csv', 
                        stringsAsFactors = FALSE)
 
 # This takes only the airplane data fromt the data frame as opposed to  all 
