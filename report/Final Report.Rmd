@@ -12,5 +12,5 @@ read_chunk("../code/cleaning_data.R")
 ```
 
 
-```{r cleaning}
+```{r cleaning, cache = TRUE}
 ```
