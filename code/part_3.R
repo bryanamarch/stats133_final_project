@@ -9,7 +9,7 @@ library(stringr)
 library(ggplot2)
 
 # functions needed 
-source('code/fun_top3.R')
+source('../code/fun_top3.R')
 
 # must have ran part_2 first.
 decade_names <- c("1920s", "1930s", "1940s", "1950s", "1960s", "1970s", 
@@ -26,13 +26,6 @@ freq <- as.vector(top3_array)
 decade <- rep(decade_names, each = 3)
 
 top3 <- data.frame(type = type, freq = freq, decade = decade)
-  
-  
-# Graphing (I don't think we need to actually include this plot, so we can 
-# delete it once we've all seen it)
-ggplot(top3, aes(x = decade, y = freq, fill = type))+
-  geom_bar( stat = 'identity', position = position_dodge())
-  
 
 # These are the two sets of decades we want to focus on. 
 # Because of the differences among our data sets, we want to look at:
@@ -67,27 +60,27 @@ ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
 
 # Exporting the Graphics
 # PDF
-pdf('plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.pdf')
+pdf('../plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.pdf')
 ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
   geom_bar( stat = 'identity', position = position_dodge())+
   ggtitle('Top 3 Planes in Accidents 1940s to 1970s')
 dev.off()
 
-pdf('plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.pdf')
+pdf('../plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.pdf')
 ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
   geom_bar( stat = 'identity', position = position_dodge())+
   ggtitle('Top 3 Planes in Accidents 1980s to 2000s')
 dev.off()
 
 # PNG
-png('plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.png',
+png('../plots_and_graphics/most_common_planes_in_accidents_1940s_to_1970s.png',
     res = 96, width = 700, height = 500)
 ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
   geom_bar( stat = 'identity', position = position_dodge())+
   ggtitle('Top 3 Planes in Accidents 1940s to 1970s')
 dev.off()
 
-png('plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.png',
+png('../plots_and_graphics/most_common_planes_in_accidents_1980s_to_2000s.png',
     res = 96)
 ggplot(top3_2, aes(x = decade, y = freq, fill = type))+
   geom_bar( stat = 'identity', position = position_dodge())+

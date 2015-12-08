@@ -1,0 +1,17 @@
+{
+    "contents" : "# ======================================================================\n# Function: norm_decade\n# Description: This is a function that we created to take the decades\n#              data and divides it by the data set of which it came\n#              from.\n# ======================================================================\n\n# normalizing accidents amounts by decades function\nnorm_decade <- function(x){\n  if(x %in% c('1920s', '1930s', '1940s', '1950s', '1960s', '1970s')){\n    nrow(data[data$decade == x,  ])/amt_dataset1\n  }\n  else{\n    nrow(data[data$decade == x,  ])/amt_dataset2\n  }\n}\n",
+    "created" : 1449600727143.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3534918108",
+    "id" : "F3CC750F",
+    "lastKnownWriteTime" : 1449369106,
+    "path" : "~/R/Final Project/stats133_final_project/code/norm_decade.R",
+    "project_path" : "code/norm_decade.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
