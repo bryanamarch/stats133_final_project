@@ -1,0 +1,18 @@
+{
+    "contents" : "fun_top3 <- function(dat, dec_names) {\n  top3 <- NULL\n  for (i in dec_names) {\n    data_subset <- subset(dat, decade == i)\n    value <- head(sort(table(data_subset$type), decreasing = TRUE), n = 3)\n    # name <- paste0('top3_',i)\n    top3 <- c(top3, value)\n  }\n  return(top3)\n}\n",
+    "created" : 1449435695559.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1323647016",
+    "id" : "5A1FD5EF",
+    "lastKnownWriteTime" : 1449549628,
+    "path" : "~/R/Final Project/stats133_final_project/code/fun_top3.R",
+    "project_path" : "code/fun_top3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : true,
+    "type" : "r_source"
+}
