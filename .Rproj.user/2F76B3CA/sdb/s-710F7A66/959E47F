@@ -1,0 +1,17 @@
+{
+    "contents" : "# ======================================================================\n# cleaning_data: cleaning the raw data. \n# Description: This script starts off with two raw data files and we \n#              first worked on cleaning each individually by extracting \n#              the data we wanted and then concatenated both data sets \n#              based on the date of the accidents. \n# ======================================================================\n\n# First we download the raw data onto R studio: \n# We will use a numebering convention so that at each modication the number \n# increases by one. \nav_data_1 <- read.delim('rawdata/aviation_data.txt', header = TRUE, \n                        sep = '|' , stringsAsFactors = FALSE)\nair_data_1 <- read.csv('rawdata/airplane_crashes.csv', \n                       stringsAsFactors = FALSE)\n\n# This takes only the airplane data fromt the data frame as opposed to  all \n# aircrafts. \nav_data_2 <- subset(av_data_1, Aircraft.Category == ' Airplane '| \n                      Aircraft.Category == '  ')\nair_data_2 <- air_data_1[!grepl('airship', air_data_1$Type), ]\n\n# We will merge these two date tables so that air_data provides information\n# from 1920-1981 and av_data information from 1982-2015. So now we extract \n# only the years we want from each data frame. \nacc_date <- av_data_2$Event.Date\nav_data_2$year <- as.numeric(substr(acc_date, start = nchar(acc_date)-4, \n                                    stop = nchar(acc_date)))\nav_data_3 <- subset(av_data_2, year >= 1982)\n\nac_date <- air_data_2$Date\nair_data_2$year <- as.numeric(substr(ac_date, start = nchar(ac_date)-3, \n                                     stop = nchar(ac_date)))\nair_data_3 <- subset(air_data_2, year <= 1981 & year >= 1920)\n\n# In av_data the columns 'Location' and 'Country' should be combined as well\n# as 'Make' and 'Model'\nav_data_3$new_location <- paste0(av_data_3$Location, av_data_3$Country)\nav_data_3$Type <- paste0(av_data_3$Make, av_data_3$Model)\n\n# In air_data the order of data ia currently in ascending order, but to match \n# av_data we want it to be in descending order. \nair_data_4 <- air_data_3[nrow(air_data_3):1,]\n\n# Now to extract the information (columns) that we want  \nav_data_4 <- av_data_3[c('Event.Date', 'new_location', 'Type')]\nair_data_5 <- air_data_4[c('Date', 'Location', 'Type')]\n\n# We don't want the crash information for crashes missing 'Type' information.\nav_data_5 <- subset(av_data_4, Type != '    ')\nair_data_6 <- subset(air_data_5, Type != '')\n\n# Rename column names so that they are the same for both data frames. \nnames(av_data_5) <- c('date', 'location', 'type')\nnames(air_data_6) <- c('date', 'location', 'type') \n\n# Now we combine the two data frames. \ndata <- rbind(av_data_5, air_data_6)\n\n# Changing the 'type' column to all lowercase\ndata$type <- tolower(data$type)\n\n# Changing the 'location' column to all lowercase\ndata$location <- tolower(data$location)\n\n# Exporting the 'data' file into the data folder. \nwrite.csv(data, file = 'data/data.csv')\n",
+    "created" : 1449341168287.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2217953824",
+    "id" : "959E47F",
+    "lastKnownWriteTime" : 1449437039,
+    "path" : "~/R/Final Project/stats133_final_project/code/cleaning_data.R",
+    "project_path" : "code/cleaning_data.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

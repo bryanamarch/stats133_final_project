@@ -6,6 +6,9 @@
 # packages needed
 library(stringr)
 
+# function needed 
+source('code/norm_decade.R')
+
 # making a year only column
 data$year <- as.numeric(str_extract(data$date, '[0-9]{4}'))
 
@@ -34,9 +37,6 @@ table(data$decade)
 # normalizing data
 amt_dataset1 <- nrow(air_data_6)
 amt_dataset2 <- nrow(av_data_5)
-
-# function needed 
-source('code/norm_decade.R')
 
 norm_decade_1920 <- norm_decade('1920s')
 norm_decade_1930 <- norm_decade('1930s')
