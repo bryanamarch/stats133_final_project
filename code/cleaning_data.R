@@ -63,5 +63,8 @@ data$type <- tolower(data$type)
 # Changing the 'location' column to all lowercase
 data$location <- tolower(data$location)
 
+# Showing the head of the cleaned data
+head(data)
+
 # Exporting the 'data' file into the data folder. 
 write.csv(data, file = 'data/data.csv')
