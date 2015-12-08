@@ -9,10 +9,10 @@
 library(stringr)
 
 # function needed 
-source('code/num_name.R')
+source('../code/num_name.R')
 
 # importing data 
-data <- read.csv('data/data.csv', stringsAsFactors = FALSE)
+data <- read.csv('../data/data.csv', stringsAsFactors = FALSE)
 
 # removing first column due to repeated index
 data$X <- NULL
@@ -46,7 +46,7 @@ barplot(monthly_data, xlab = 'Months',
 
 # Exporting the Graphics
 # PDF
-pdf('plots_and_graphics/number_of_crashes_each_month.pdf')
+pdf('../plots_and_graphics/number_of_crashes_each_month.pdf')
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
         main = 'Number of Crashes Each Month',
@@ -57,7 +57,7 @@ barplot(monthly_data, xlab = 'Months',
 dev.off()
 
 # PNG
-png('plots_and_graphics/number_of_crashes_each_month.png', res = 96)
+png('../plots_and_graphics/number_of_crashes_each_month.png', res = 96)
 barplot(monthly_data, xlab = 'Months',
         ylab = 'Number of Accidents',
         main = 'Number of Crashes Each Month',

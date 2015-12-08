@@ -7,7 +7,7 @@
 library(stringr)
 
 # function needed 
-source('code/norm_decade.R')
+source('../code/norm_decade.R')
 
 # making a year only column
 data$year <- as.numeric(str_extract(data$date, '[0-9]{4}'))
@@ -69,7 +69,7 @@ barplot(vec_norm_decade, xlab = 'Decades',
 
 # Exporting the Graphics
 # PDF
-pdf('plots_and_graphics/normalized_number_of_crashes_each_decade.pdf')
+pdf('../plots_and_graphics/normalized_number_of_crashes_each_decade.pdf')
 barplot(vec_norm_decade, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
         main = 'Normalized Number of Crashes Each Decade',
@@ -80,7 +80,7 @@ barplot(vec_norm_decade, xlab = 'Decades',
 dev.off()
 
 # PNG
-png('plots_and_graphics/normalized_number_of_crashes_each_decade.png',
+png('../plots_and_graphics/normalized_number_of_crashes_each_decade.png',
     res = 96)
 barplot(vec_norm_decade, xlab = 'Decades',
         ylab = 'Proportions of Accidents to Each Dataset',
