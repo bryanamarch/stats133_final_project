@@ -1,12 +1,12 @@
 {
-    "contents" : "fun_top3 <- function(dat, dec_names) {\n  top3 <- NULL\n  for (i in dec_names) {\n    data_subset <- subset(dat, decade == i)\n    value <- head(sort(table(data_subset$type), decreasing = TRUE), n = 3)\n    # name <- paste0('top3_',i)\n    top3 <- c(top3, value)\n  }\n  return(top3)\n}\n",
+    "contents" : "# ======================================================================\n# Function: fun_top3\n# Description: This function subsets the data by decade and extracts \n#              the three types of panes with the most amount of crashes\n#              in each decade, then concatenates all 30 (10 decades). \n# ======================================================================\n\nfun_top3 <- function(dat, dec_names) {\n  top3 <- NULL\n  for (i in dec_names) {\n    data_subset <- subset(dat, decade == i)\n    value <- head(sort(table(data_subset$type), decreasing = TRUE), n = 3)\n    top3 <- c(top3, value)\n  }\n  return(top3)\n}",
     "created" : 1449435695559.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1323647016",
+    "hash" : "4137270336",
     "id" : "5A1FD5EF",
-    "lastKnownWriteTime" : 1449549628,
+    "lastKnownWriteTime" : 1449600073,
     "path" : "~/R/Final Project/stats133_final_project/code/fun_top3.R",
     "project_path" : "code/fun_top3.R",
     "properties" : {
