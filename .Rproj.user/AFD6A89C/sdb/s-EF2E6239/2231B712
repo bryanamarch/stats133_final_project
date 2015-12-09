@@ -1,12 +1,12 @@
 {
-    "contents" : "---\ntitle: \"Report\"\nauthor: \"Bryana Gutierrez, Lily Li, Erica Wong\"\ndate: \"December 8, 2015\"\noutput: pdf_document\n---\n\n```{r, echo = FALSE}\nlibrary (knitr)\nread_chunk(\"../code/cleaning_data.R\")\n\n```\n\n\n```{r cleaning}\n```\n\n\n```{r, echo = FALSE}\nread_chunk(\"../code/part_2.R\")\n\n```\n\n\n```{r Necessary Packages and Functions}\n```\n",
+    "contents" : "---\ntitle: \"Report\"\nauthor: \"Bryana Gutierrez, Lily Li, Erica Wong\"\ndate: \"December 8, 2015\"\noutput: pdf_document\n---\n\n```{r, echo = FALSE}\nlibrary (knitr)\nread_chunk(\"../code/cleaning_data.R\")\n\n```\n\n\n```{r cleaning}\n```\n\n\n```{r, echo = FALSE}\nread_chunk(\"../code/part_2.R\")\n\n```\n\n```{r Necessary Packages and Functions}\n```\n\nWe wanted to look at the number of accidents per decade to see if any particular decades differed from the rest.However, the data is not organized into decades. First, we used regular expressions to pull the year out of the date column and created a new column named \"year\". \n\n```{r Creating Decades Labels for each Data Point}\n```\n\n\n```{r Amount of Accidents in each Decade}\n```\n\n```{r Normalizing Data}\n```\n\n```{r Graphing Proportions of Accidents of each Decade}\n```\n\n```{r Exporting Graphics}\n```\n\n",
     "created" : 1449599835995.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "260614807",
+    "hash" : "1763187774",
     "id" : "2231B712",
-    "lastKnownWriteTime" : 1449627247,
+    "lastKnownWriteTime" : 1449642450,
     "path" : "~/STAT133/stats133_final_project/report/Final Report.Rmd",
     "project_path" : "report/Final Report.Rmd",
     "properties" : {

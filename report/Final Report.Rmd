@@ -21,6 +21,24 @@ read_chunk("../code/part_2.R")
 
 ```
 
-
 ```{r Necessary Packages and Functions}
 ```
+
+We wanted to look at the number of accidents per decade to see if any particular decades differed from the rest.However, the data is not organized into decades. First, we used regular expressions to pull the year out of the date column and created a new column named "year". 
+
+```{r Creating Decades Labels for each Data Point}
+```
+
+
+```{r Amount of Accidents in each Decade}
+```
+
+```{r Normalizing Data}
+```
+
+```{r Graphing Proportions of Accidents of each Decade}
+```
+
+```{r Exporting Graphics}
+```
+
