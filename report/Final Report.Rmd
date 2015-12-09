@@ -4,22 +4,60 @@ author: "Bryana Gutierrez, Lily Li, Erica Wong"
 date: "December 8, 2015"
 output: pdf_document
 ---
-## Cleaning Data
+
 ```{r, echo = FALSE}
 library (knitr)
 read_chunk("../code/cleaning_data.R")
+read_chunk("../code/part_1.R")
+read_chunk("../code/part_2.R")
+read_chunk("../code/part_3.R")
+```
+## Cleaning Data
+This script starts off with two raw data files and we first worked on cleaning
+each individually by extracting the data we wanted and then concatenated both 
+data sets based on the date of the accidents. 
 
+First we download the raw data onto R studio: 
+```{r Loading Data, cache = TRUE}
 ```
 
+We will use a numbering convention so that at each modication the index 
+increases by one. This takes only the airplane data fromt the data frame as 
+opposed to all aircrafts.
+```{r Cleaning1, cache = TRUE}
+```
 
-```{r cleaning, cache = TRUE}
+Next, we merge these two date tables so that air_data provides information
+from 1920-1981 and av_data information from 1982-2015. So now we extract 
+only the years we want from each data frame. 
+```{r Cleaning2, cache = TRUE}
+```
+
+In av_data the columns 'Location' and 'Country' should be combined as well
+as 'Make' and 'Model'
+```{r Cleaning3, cache = TRUE}
+```
+
+Now, we work on reorganizing the data so that it is in the format that we 
+want. In air_data the order of data ia currently in ascending order, but 
+to match av_data we want it to be in descending order. We also extract the
+colums that we want and rename then so that the two data frames have the same
+column names. We do this, so that once we extract missing values we can 
+concatenate the two data frames. Finally we make the type and location names 
+uniform by changing all characters to lower case. 
+```{r Aesthetics, cache = TRUE}
+```
+
+This is our clean data
+```{r Peek, cache = TRUE}
+```
+
+Exporting the `data` file into the data folder. 
+```{r Exporting, cache = TRUE}
 ```
 
 ## Part 1: Monthly Data
 In this part of the project, we were looking to see which of the months had the most plane crashes. In order to do this, we will need to first load the necessary code and packages.
-```{r, echo = FALSE}
-read_chunk("../code/part_1.R")
-```
 
 ```{r Necessary Packages and Functions Part 1, cache = TRUE}
 ```
@@ -39,10 +77,6 @@ Finally, we will export our graphics.
 ```
 
 ## Part 2: Data by Decades
-```{r, echo = FALSE}
-read_chunk("../code/part_2.R")
-
-```
 
 ```{r Necessary Packages and Functions, cache = TRUE}
 ```
@@ -83,5 +117,32 @@ As computers became more sophisticated in the 2000s, they began to take over rou
 ```{r Exporting Graphics, cache = TRUE}
 ```
 
+## Part 3: Type analysis 
+Here we are looking at how the most common types of airplanes to crash changed 
+over different decades. We are parse out the data by decade so that we can plot
+by type. Specifically, we extract just the top three values.
 
+```{r Top3 Array, cache = TRUE}
+```
 
+Now we want to create a data frame that combines the data from each decade in 
+a way that we can plot it efficiently. 
+```{r Reorganizing, cache = TRUE}
+```
+
+These are the two sets of decades we want to focus on. Because of the 
+differences among our data sets, we want to look at:
+  - from 1940-1980 
+  - from 1980-2010
+
+1940-1980
+```{r Parsing1, cache = TRUE}
+```
+
+1980-2010
+```{r Parsing2, cache = TRUE}
+```
+
+Finally, We export the graphics. 
+```{r Exporting the Graphics, cache = TRUE}
+```
