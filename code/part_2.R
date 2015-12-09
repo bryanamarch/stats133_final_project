@@ -3,15 +3,20 @@
 # Description: Here we will find the proportions of accidents to each 
 #              dataset.
 # ======================================================================
+
+## ---- Necessary Packages and Functions ----
 # packages needed
 library(stringr)
 
 # function needed 
 source('../code/norm_decade.R')
 
+
+## ---- New Numeric Year Column ----
 # making a year only column
 data$year <- as.numeric(str_extract(data$date, '[0-9]{4}'))
 
+## ---- Creating Decades Labels for each Data Point ----
 # labeling by decades
 decade = NULL
 for(i in 1:length(data$year)){
@@ -28,13 +33,14 @@ for(i in 1:length(data$year)){
   if ((x %in% c(2010:2019))==TRUE) x = '2010s'
   decade = c(decade, x)
 }
-
 data$decade <- decade
 
-# looking at freq of accidents for 
+## ---- Amount of Accidents in each Decade ----
+# looking at freq of accidents
 table(data$decade)
 
-# normalizing data
+## ---- Normalizing Data ----
+# size of each dataset
 amt_dataset1 <- nrow(air_data_6)
 amt_dataset2 <- nrow(av_data_5)
 
@@ -54,6 +60,7 @@ vec_norm_decade <- c(norm_decade_1920, norm_decade_1930,  norm_decade_1940,
                      norm_decade_1980, norm_decade_1990, norm_decade_2000, 
                      norm_decade_2010)
 
+## ---- Graphing Proportions of Accidents of each Decade ----
 # Graphing
 decade_names <- c('1920s', '1930s', '1940s', '1950s', '1960s', '1970s',
                   '1980s', '1990s', '2000s', '2010s')
@@ -67,6 +74,7 @@ barplot(vec_norm_decade, xlab = 'Decades',
         col = '#FFAC0E')
 
 
+## ---- Exporting Graphics ----
 # Exporting the Graphics
 # PDF
 pdf('../plots_and_graphics/normalized_number_of_crashes_each_decade.pdf')
