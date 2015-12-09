@@ -4,7 +4,7 @@ author: "Bryana Gutierrez, Lily Li, Erica Wong"
 date: "December 8, 2015"
 output: pdf_document
 ---
-
+## Cleaning Data
 ```{r, echo = FALSE}
 library (knitr)
 read_chunk("../code/cleaning_data.R")
@@ -12,7 +12,30 @@ read_chunk("../code/cleaning_data.R")
 ```
 
 
-```{r cleaning}
+```{r cleaning, cache = TRUE}
+```
+
+## Part 1: Monthly Data
+In this part of the project, we were looking to see which of the months had the most plane crashes. In order to do this, we will need to first load the necessary code and packages.
+```{r, echo = FALSE}
+read_chunk("../code/part_1.R")
+```
+
+```{r Necessary Packages and Functions Part 1, cache = TRUE}
+```
+
+Our cleaned data set does not have a column that just contains the months when each accident happens, so we will had to make our own by doing the following.
+```{r Adding Month Column, cache = TRUE}
+```
+
+With this column, we are now ready to graph to see our findings.
+```{r Graphing Monthly Data, cache = TRUE}
+```
+
+Our original belief was that the number of accidents every month would be relatively uniform, but instead, we found that there are more accidents that occur during the middle of the year, with the most occurring in July. We found this idea to be interesting and surprising. The number of accidents could have increased due to there being more traveling being done during the summer due to kids being on summer vacation. However, during the summer seasons, there are also a lot of tropical storms , thunderstorms, and changes in the weather that could affect how safe it is to travel and increases the chance of getting into a plane accident. According to a New York Times article, the number of airplane accidents could be greater in the summer months because that is typically when people fly their private airplanes. A smaller, private aircraft is more likely to get into an accident than a commercial plane. The article states that, “Statistics from the N.T.S.B. show that general aviation aircraft average nearly seven accidents per 100,000 flight hours, compared with an average of 0.16 accidents per 100,000 hours for commercial airlines” (Fowler). 
+
+Finally, we will export our graphics.
+```{r Exporting Graphics Part 1, cache = TRUE}
 ```
 
 

@@ -5,12 +5,14 @@
 #              data is all uniform. 
 # ======================================================================
 
+## ---- Necessary Packages and Functions Part 1 ----
 # packages needed
 library(stringr)
 
 # function needed 
 source('../code/num_name.R')
 
+## ---- Adding Month Column ----
 # importing data 
 data <- read.csv('../data/data.csv', stringsAsFactors = FALSE)
 
@@ -24,6 +26,10 @@ data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
 dates <- data$month
 month <- num_name(dates)
 
+# seeing the new dataframe
+head(data)
+
+## ---- Graphing Monthly Data ----
 # Number of Entries Each Month
 month_names <- c('January', 'February', 'March', 'April', 'May', 'June', 
                  'July', 'August', 'September', 'October', 'November',
@@ -44,6 +50,7 @@ barplot(monthly_data, xlab = 'Months',
         cex.names = .75,
         col = '#FD075E')
 
+## ---- Exporting Graphics Part 1 ----
 # Exporting the Graphics
 # PDF
 pdf('../plots_and_graphics/number_of_crashes_each_month.pdf')
