@@ -38,30 +38,50 @@ Finally, we will export our graphics.
 ```{r Exporting Graphics Part 1, cache = TRUE}
 ```
 
-
+## Part 2: Data by Decades
 ```{r, echo = FALSE}
 read_chunk("../code/part_2.R")
 
 ```
 
-```{r Necessary Packages and Functions}
+```{r Necessary Packages and Functions, cache = TRUE}
 ```
 
 We wanted to look at the number of accidents per decade to see if any particular decades differed from the rest.However, the data is not organized into decades. First, we used regular expressions to pull the year out of the date column and created a new column named "year". 
 
-```{r Creating Decades Labels for each Data Point}
+```{r New Numeric Year Column, cache = TRUE}
 ```
 
+For graphing, we wanted the axis to display decades, for example "1980s", and the corresponding aggregated data for that decade. We created a loop that categorizes the year and would group all years in a certain decade into that decade. 
+
+```{r Creating Decades Labels for each Data Point, cache = TRUE}
+```
+
+Next, we looked at the frequency of accidents for each decade by calling upon the data through table(). 
 
 ```{r Amount of Accidents in each Decade}
 ```
 
-```{r Normalizing Data}
+We started off by graphing a bar chart of the number of accidents per decade but found that the data was skewed due to the significantly larger size of the dataset for years 1980s and onwards. We then normalized the data by taking proportion of each decade’s accidents to the total amount of accidents for the data set it came from. For example, 1920s proportion was (# of accidents in 1920s) / (total # of accidents of dataset1)
+
+```{r Normalizing Data, cache = TRUE}
 ```
 
-```{r Graphing Proportions of Accidents of each Decade}
+There seems to be a gradual increase in accidents till 1980s where it starts to drop off starting 1990s. Data from the 2000s show a decrease, which agrees with the FAA report. 
+
+```{r Graphing Proportions of Accidents of each Decade, cache = TRUE}
 ```
 
-```{r Exporting Graphics}
+According to the FAA:
+“Between 2001 and 2007, aviation witnessed one of its safest periods for scheduled air carriers. Not counting the terrorist activities of September 11, 2001, there were only three fatal accidents in 2001; none in 2002; two in 2003; one in 2004; three in 2005; two in 2006; and none in 2007. Fatal accidents became rare events with only .01 accidents per 100,000 flight hours or .018 accidents per 100,000 departures.”
+
+Another explanation could be the improvements of air traffic control since after the 1980s (start of the digital age). 
+
+According to Wikipedia:
+As computers became more sophisticated in the 2000s, they began to take over routine aspects of the air traffic controller's task. Up until then all air traffic in nearby airspace was tracked and displayed, with the air traffic controller responsible for monitoring its position and assessing any need for action. Modern computerised systems are capable of monitoring the flight paths of many more aircraft at a given time, allowing the controller to manage more aircraft and to focus on the decision-making and follow-up processes.
+
+```{r Exporting Graphics, cache = TRUE}
 ```
+
+
 
