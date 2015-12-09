@@ -14,3 +14,13 @@ read_chunk("../code/cleaning_data.R")
 
 ```{r cleaning}
 ```
+
+
+```{r, echo = FALSE}
+read_chunk("../code/part_2.R")
+
+```
+
+
+```{r Necessary Packages and Functions}
+```

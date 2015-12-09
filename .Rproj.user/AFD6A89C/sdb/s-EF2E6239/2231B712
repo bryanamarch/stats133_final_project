@@ -1,12 +1,12 @@
 {
-    "contents" : "---\ntitle: \"Report\"\nauthor: \"Bryana Gutierrez, Lily Li, Erica Wong\"\ndate: \"December 8, 2015\"\noutput: pdf_document\n---\n\n```{r, echo = FALSE}\nlibrary (knitr)\nread_chunk(\"../code/cleaning_data.R\")\n\n```\n\n\n```{r cleaning}\n```\n",
+    "contents" : "---\ntitle: \"Report\"\nauthor: \"Bryana Gutierrez, Lily Li, Erica Wong\"\ndate: \"December 8, 2015\"\noutput: pdf_document\n---\n\n```{r, echo = FALSE}\nlibrary (knitr)\nread_chunk(\"../code/cleaning_data.R\")\n\n```\n\n\n```{r cleaning}\n```\n\n\n```{r, echo = FALSE}\nread_chunk(\"../code/part_2.R\")\n\n```\n\n\n```{r Necessary Packages and Functions}\n```\n",
     "created" : 1449599835995.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3656600284",
+    "hash" : "260614807",
     "id" : "2231B712",
-    "lastKnownWriteTime" : 1449600666,
+    "lastKnownWriteTime" : 1449627247,
     "path" : "~/STAT133/stats133_final_project/report/Final Report.Rmd",
     "project_path" : "report/Final Report.Rmd",
     "properties" : {

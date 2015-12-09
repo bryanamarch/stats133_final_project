@@ -9,6 +9,7 @@
 # First we download the raw data onto R studio: 
 # We will use a numebering convention so that at each modication the number 
 # increases by one. 
+
 ## ---- cleaning ----
 av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE, 
                         sep = '|' , stringsAsFactors = FALSE)
