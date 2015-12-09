@@ -9,7 +9,12 @@
 # First we download the raw data onto R studio: 
 # We will use a numebering convention so that at each modication the number 
 # increases by one. 
+<<<<<<< HEAD
 ## ---- loading ----
+=======
+
+## ---- cleaning ----
+>>>>>>> 460b2ce8b2a49263e553540ef440d7a1ffb1f670
 av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE, 
                         sep = '|' , stringsAsFactors = FALSE)
 air_data_1 <- read.csv('../rawdata/airplane_crashes.csv', 
