@@ -14,6 +14,7 @@ library(ggplot2)
 # functions needed 
 source('../code/fun_top3.R')
 
+## ---- comment ----
 # Here we are parsing out the data by decade so that we can plot by type and 
 # extracting just the top three values.
 ## ---- Top3 Array ----
