@@ -156,9 +156,6 @@ action. Modern computerized systems are capable of monitoring the flight paths
 of many more aircraft at a given time, allowing the controller to manage more
 aircraft and to focus on the decision-making and follow-up processes.
 
-```{r Exporting Graphics, cache = TRUE}
-```
-
 ## Part 3: Type analysis 
 Here we are looking at how the most common types of airplanes to crash changed 
 over different decades. We are parse out the data by decade so that we can plot
@@ -204,6 +201,3 @@ room for error. Finally, we might have seen more Cessinas involved in
 accidents because there have been more Cessina produced in recent years than 
 any other kind of plane. 
 
-Finally, We export the graphics. 
-```{r Exporting the Graphics, echo = FALSE, cache = TRUE}
-```
