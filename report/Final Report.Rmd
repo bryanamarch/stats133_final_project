@@ -204,5 +204,5 @@ accidents because there have been more Cessina produced in recent years than
 any other kind of plane. 
 
 Finally, We export the graphics. 
-```{r Exporting the Graphics, cache = TRUE}
+```{r Exporting the Graphics, echo = FALSE, cache = TRUE}
 ```
