@@ -20,6 +20,6 @@ What does each folder contain?:
  - Resources: The link and information that we used for the analysis of our data.
  - Skeleton: The basis for making differnet directories.
  
- CITATIONS AND LICENSES
- You are welcome to redistribute it. 
+CITATIONS AND LICENSES
+You are welcome to redistribute it. 
  
