@@ -4,6 +4,8 @@
 #              airplanes to crash changed over different decades. 
 # ======================================================================
 
+# Note: must have ran part_2 first.
+
 ## ---- Preliminary ----
 # packages needed
 library(stringr)
@@ -11,8 +13,6 @@ library(ggplot2)
 
 # functions needed 
 source('../code/fun_top3.R')
-
-# Note: must have ran part_2 first.
 
 # Here we are parsing out the data by decade so that we can plot by type and 
 # extracting just the top three values.
