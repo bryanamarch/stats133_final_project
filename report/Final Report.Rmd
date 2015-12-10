@@ -21,8 +21,8 @@ First we download the raw data onto R studio:
 ```{r Loading Data, cache = TRUE}
 ```
 
-We will use a numbering convention so that at each modication the index 
-increases by one. This takes only the airplane data fromt the data frame as 
+We will use a numbering convention so that at each modification the index 
+increases by one. This takes only the airplane data from the data frame as 
 opposed to all aircrafts.
 ```{r Cleaning1, cache = TRUE}
 ```
@@ -39,9 +39,9 @@ as 'Make' and 'Model'
 ```
 
 Now, we work on reorganizing the data so that it is in the format that we 
-want. In air_data the order of data ia currently in ascending order, but 
+want. In air_data the order of data is currently in ascending order, but 
 to match av_data we want it to be in descending order. We also extract the
-colums that we want and rename then so that the two data frames have the same
+columns that we want and rename then so that the two data frames have the same
 column names. We do this, so that once we extract missing values we can 
 concatenate the two data frames. Finally we make the type and location names 
 uniform by changing all characters to lower case. 
@@ -98,7 +98,7 @@ Finally, we will export our graphics.
 ```
 
 We wanted to look at the number of accidents per decade to see if any 
-particular decades differed from the rest.However, the data is not organized 
+particular decades differed from the rest. However, the data is not organized 
 into decades. First, we used regular expressions to pull the year out of the 
 date column and created a new column named "year". 
 
@@ -152,7 +152,7 @@ As computers became more sophisticated in the 2000s, they began to take over
 routine aspects of the air traffic controller's task. Up until then all air 
 traffic in nearby airspace was tracked and displayed, with the air traffic 
 controller responsible for monitoring its position and assessing any need for 
-action. Modern computerised systems are capable of monitoring the flight paths
+action. Modern computerized systems are capable of monitoring the flight paths
 of many more aircraft at a given time, allowing the controller to manage more
 aircraft and to focus on the decision-making and follow-up processes.
 
@@ -191,15 +191,15 @@ that reason.
 From our graph here, we can see that from 1980-2010 the plane that got into the 
 most accidents was Cessina 152. In fact, all of the top 3 planes that got into
 accidents are Cessina. Cessina 152 is a private plane and according to an 
-article from The Economist, commerical airtravel has been a lot safer since the
-1980s, which would explain why from 1980 forward, private planes, such as 
+article from The Economist, commercial air travel has been a lot safer since
+the 1980s, which would explain why from 1980 forward, private planes, such as 
 Cessina, have been getting into more accidents. There are also many other
 reasons as to why Cessina and other private planes have been getting into more 
 accidents. For example, not a lot of private plane owners have a lot of 
 experience, private planes are flown by one person and most accidents have come
 from them losing control or not seeing something and flying into it due to no 
 one looking out for them, and having smaller fuel capacities so there is less 
-room for error. Finally, we might have seen more Cessinas involoved in 
+room for error. Finally, we might have seen more Cessinas involved in 
 accidents because there have been more Cessina produced in recent years than 
 any other kind of plane. 
 

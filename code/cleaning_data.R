@@ -7,7 +7,7 @@
 # ======================================================================
 
 # First we download the raw data onto R studio: 
-# We will use a numbering convention so that at each modication the index 
+# We will use a numbering convention so that at each modification the index
 # increases by one. 
 ## ---- Loading Data ----
 av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE, 
@@ -15,7 +15,7 @@ av_data_1 <- read.delim('../rawdata/aviation_data.txt', header = TRUE,
 air_data_1 <- read.csv('../rawdata/airplane_crashes.csv', 
                        stringsAsFactors = FALSE)
 ## ---- Cleaning1 ----
-# This takes only the airplane data fromt the data frame as opposed to  all 
+# This takes only the airplane data from the data frame as opposed to  all 
 # aircrafts. 
 av_data_2 <- subset(av_data_1, Aircraft.Category == ' Airplane '| 
                       Aircraft.Category == '  ')
@@ -42,7 +42,7 @@ av_data_3$new_location <- paste0(av_data_3$Location, av_data_3$Country)
 av_data_3$Type <- paste0(av_data_3$Make, av_data_3$Model)
 
 ## ---- Aesthetics ----
-# In air_data the order of data ia currently in ascending order, but to match 
+# In air_data the order of data is currently in ascending order, but to match 
 # av_data we want it to be in descending order. 
 air_data_4 <- air_data_3[nrow(air_data_3):1,]
 

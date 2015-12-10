@@ -26,7 +26,7 @@ data$month <- as.numeric(str_extract(data$date, '[0-9]+'))
 dates <- data$month
 month <- num_name(dates)
 
-# seeing the new dataframe
+# seeing the new data frame
 head(data)
 
 ## ---- Graphing Monthly Data ----
