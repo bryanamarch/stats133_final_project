@@ -4,7 +4,7 @@
 #              airplanes to crash changed over different decades. 
 # ======================================================================
 
-## ---- Top3 Array ----
+## ---- Preliminary ----
 # packages needed
 library(stringr)
 library(ggplot2)
@@ -16,24 +16,26 @@ source('../code/fun_top3.R')
 
 # Here we are parsing out the data by decade so that we can plot by type and 
 # extracting just the top three values.
+## ---- Top3 Array ----
 top3_array <- fun_top3(data, decade_names)
 
-## ---- Reorganizing ----
+## ---- comment ----
 # Now we want to create a data frame that combines the data from each 
 # decade in a way that we can plot it efficiently. 
+## ---- Reorganizing ----
 type <- names(top3_array)
 freq <- as.vector(top3_array)
 decade <- rep(decade_names, each = 3)
 
 top3 <- data.frame(type = type, freq = freq, decade = decade)
 
-## ---- Parsing1 ----
+## ---- comment ----
 # These are the two sets of decades we want to focus on. 
 # Because of the differences among our data sets, we want to look at:
 #  - from 1940-1980 
 #  - from 1980-2010
 
-# 1940-1980
+## ---- Parsing: 1940-1980 ----
 decade_names_1 <- decade_names[3:6]
 type_1 <- type[7:18]
 freq_1 <- freq[7:18]
@@ -47,8 +49,7 @@ ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
   ggtitle('Most Common Planes in Accidents 1940s to 1970s')+
   theme(plot.title = element_text(size = rel(.75)))
 
-## ---- Parsing2 ----
-# 1980-2010
+## ---- Parsing: 1980-2010 ----
 decade_names_2 <- decade_names[7:9]
 type_2 <- type[19:27]
 freq_2 <- freq[19:27]

@@ -163,7 +163,8 @@ aircraft and to focus on the decision-making and follow-up processes.
 Here we are looking at how the most common types of airplanes to crash changed 
 over different decades. We are parse out the data by decade so that we can plot
 by type. Specifically, we extract just the top three values.
-
+```{r Preliminary, , echo = FALSE, cache = TRUE}
+```
 ```{r Top3 Array, cache = TRUE}
 ```
 
@@ -175,7 +176,7 @@ a way that we can plot it efficiently.
 These are the two sets of decades we want to focus on. Because of the 
 differences among our data sets, we want to look at:
   - from 1940-1980 
-```{r Parsing1, cache = TRUE}
+```{r Parsing: 1940-1980, cache = TRUE}
 ```
 
 From our graph, we can see that from 1940-1979, the Douglas DC-3, was the plane
@@ -185,7 +186,7 @@ them in production, the chances that they got into accidents were higher for
 that reason.
 
   - from 1980-2010
-```{r Parsing2, cache = TRUE}
+```{r Parsing: 1980-2010, cache = TRUE}
 ```
 
 From our graph here, we can see that from 1980-2010 the plane that got into the 
