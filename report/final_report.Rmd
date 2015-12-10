@@ -162,6 +162,7 @@ over different decades. We are parse out the data by decade so that we can plot
 by type. Specifically, we extract just the top three values.
 ```{r Preliminary, cache = TRUE}
 ```
+
 ```{r Top3 Array, cache = TRUE}
 ```
 
