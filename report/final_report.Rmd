@@ -1,0 +1,203 @@
+---
+title: "Report"
+author: "Bryana Gutierrez, Lily Li, Erica Wong"
+date: "December 8, 2015"
+output: pdf_document
+---
+
+```{r, echo = FALSE}
+library (knitr)
+read_chunk("../code/cleaning_data.R")
+read_chunk("../code/part_1.R")
+read_chunk("../code/part_2.R")
+read_chunk("../code/part_3.R")
+```
+## Cleaning Data
+This script starts off with two raw data files and we first worked on cleaning
+each individually by extracting the data we wanted and then concatenated both 
+data sets based on the date of the accidents. 
+
+First we download the raw data onto R studio: 
+```{r Loading Data, cache = TRUE}
+```
+
+We will use a numbering convention so that at each modification the index 
+increases by one. This takes only the airplane data from the data frame as 
+opposed to all aircrafts.
+```{r Cleaning1, cache = TRUE}
+```
+
+Next, we merge these two date tables so that air_data provides information
+from 1920-1981 and av_data information from 1982-2015. So now we extract 
+only the years we want from each data frame. 
+```{r Cleaning2, cache = TRUE}
+```
+
+In av_data the columns 'Location' and 'Country' should be combined as well
+as 'Make' and 'Model'
+```{r Cleaning3, cache = TRUE}
+```
+
+Now, we work on reorganizing the data so that it is in the format that we 
+want. In air_data the order of data is currently in ascending order, but 
+to match av_data we want it to be in descending order. We also extract the
+columns that we want and rename then so that the two data frames have the same
+column names. We do this, so that once we extract missing values we can 
+concatenate the two data frames. Finally we make the type and location names 
+uniform by changing all characters to lower case. 
+```{r Aesthetics, cache = TRUE}
+```
+
+This is our clean data
+```{r Peek, cache = TRUE}
+```
+
+Exporting the `data` file into the data folder. 
+```{r Exporting, cache = TRUE}
+```
+
+## Part 1: Monthly Data
+In this part of the project, we were looking to see which of the months had 
+the most plane crashes. In order to do this, we will need to first load the 
+necessary code and packages.
+```{r Necessary Packages and Functions Part 1, cache = TRUE}
+```
+
+Our cleaned data set does not have a column that just contains the months when
+each accident happens, so we will had to make our own by doing the following.
+```{r Adding Month Column, cache = TRUE}
+```
+
+With this column, we are now ready to graph to see our findings.
+```{r Graphing Monthly Data, cache = TRUE}
+```
+
+Our original belief was that the number of accidents every month would be 
+relatively uniform, but instead, we found that there are more accidents that 
+occur during the middle of the year, with the most occurring in July. We found 
+this idea to be interesting and surprising. The number of accidents could have 
+increased due to there being more traveling being done during the summer due to
+kids being on summer vacation. However, during the summer seasons, there are 
+also a lot of tropical storms , thunderstorms, and changes in the weather that
+could affect how safe it is to travel and increases the chance of getting into 
+a plane accident. According to a New York Times article, the number of airplane 
+accidents could be greater in the summer months because that is typically when
+people fly their private airplanes. A smaller, private aircraft is more likely
+to get into an accident than a commercial plane. The article states that, 
+“Statistics from the N.T.S.B. show that general aviation aircraft average 
+nearly seven accidents per 100,000 flight hours, compared with an average of
+0.16 accidents per 100,000 hours for commercial airlines” (Fowler). 
+
+Finally, we will export our graphics.
+```{r Exporting Graphics Part 1, cache = TRUE}
+```
+
+## Part 2: Data by Decades
+
+```{r Necessary Packages and Functions, cache = TRUE}
+```
+
+We wanted to look at the number of accidents per decade to see if any 
+particular decades differed from the rest. However, the data is not organized 
+into decades. First, we used regular expressions to pull the year out of the 
+date column and created a new column named "year". 
+
+```{r New Numeric Year Column, cache = TRUE}
+```
+
+For graphing, we wanted the axis to display decades, for example "1980s", and
+the corresponding aggregated data for that decade. We created a loop that 
+categorizes the year and would group all years in a certain decade into that
+decade. 
+
+```{r Creating Decades Labels for each Data Point, cache = TRUE}
+```
+
+Next, we looked at the frequency of accidents for each decade by calling upon
+the data through table(). 
+
+```{r Amount of Accidents in each Decade}
+```
+
+We started off by graphing a bar chart of the number of accidents per decade 
+but found that the data was skewed due to the significantly larger size of the 
+dataset for years 1980s and onwards. We then normalized the data by taking 
+proportion of each decade’s accidents to the total amount of accidents for the
+data set it came from. For example, 1920s proportion was: 
+(# of accidents in 1920s) / (total # of accidents of dataset1)
+
+```{r Normalizing Data, cache = TRUE}
+```
+
+There seems to be a gradual increase in accidents till 1980s where it starts to 
+drop off starting 1990s. Data from the 2000s show a decrease, which agrees with
+the FAA report. 
+
+```{r Graphing Proportions of Accidents of each Decade, cache = TRUE}
+```
+
+According to the FAA:
+“Between 2001 and 2007, aviation witnessed one of its safest periods for 
+scheduled air carriers. Not counting the terrorist activities of September 11, 
+2001, there were only three fatal accidents in 2001; none in 2002; two in 2003; 
+one in 2004; three in 2005; two in 2006; and none in 2007. Fatal accidents 
+became rare events with only .01 accidents per 100,000 flight hours or .018 
+accidents per 100,000 departures.”
+
+Another explanation could be the improvements of air traffic control since 
+after the 1980s (start of the digital age). 
+
+According to Wikipedia:
+As computers became more sophisticated in the 2000s, they began to take over 
+routine aspects of the air traffic controller's task. Up until then all air 
+traffic in nearby airspace was tracked and displayed, with the air traffic 
+controller responsible for monitoring its position and assessing any need for 
+action. Modern computerized systems are capable of monitoring the flight paths
+of many more aircraft at a given time, allowing the controller to manage more
+aircraft and to focus on the decision-making and follow-up processes.
+
+## Part 3: Type analysis 
+Here we are looking at how the most common types of airplanes to crash changed 
+over different decades. We are parse out the data by decade so that we can plot
+by type. Specifically, we extract just the top three values.
+```{r Preliminary, cache = TRUE}
+```
+```{r Top3 Array, cache = TRUE}
+```
+
+Now we want to create a data frame that combines the data from each decade in 
+a way that we can plot it efficiently. 
+```{r Reorganizing, cache = TRUE}
+```
+
+These are the two sets of decades we want to focus on. Because of the 
+differences among our data sets, we want to look at:
+  - from 1940-1980 
+```{r Parsing: 1940-1980, cache = TRUE}
+```
+
+From our graph, we can see that from 1940-1979, the Douglas DC-3, was the plane
+that got into the most accidents. However, this could be due to the fact that 
+the Douglas DC-3 was the most produced airliner. So, because there were more of
+them in production, the chances that they got into accidents were higher for 
+that reason.
+
+  - from 1980-2010
+```{r Parsing: 1980-2010, cache = TRUE}
+```
+
+From our graph here, we can see that from 1980-2010 the plane that got into the 
+most accidents was Cessina 152. In fact, all of the top 3 planes that got into
+accidents are Cessina. Cessina 152 is a private plane and according to an 
+article from The Economist, commercial air travel has been a lot safer since
+the 1980s, which would explain why from 1980 forward, private planes, such as 
+Cessina, have been getting into more accidents. There are also many other
+reasons as to why Cessina and other private planes have been getting into more 
+accidents. For example, not a lot of private plane owners have a lot of 
+experience, private planes are flown by one person and most accidents have come
+from them losing control or not seeing something and flying into it due to no 
+one looking out for them, and having smaller fuel capacities so there is less 
+room for error. Finally, we might have seen more Cessinas involved in 
+accidents because there have been more Cessina produced in recent years than 
+any other kind of plane. 
+
