@@ -44,7 +44,8 @@ top3_1 <- data.frame(type = type_1, freq = freq_1, decade = decade_1)
 # plotting the trend
 ggplot(top3_1, aes(x = decade, y = freq, fill = type))+
   geom_bar( stat = 'identity', position = position_dodge())+
-  ggtitle('Most Common Planes in Accidents 1940s to 1970s')
+  ggtitle('Most Common Planes in Accidents 1940s to 1970s')+
+  theme(plot.title = element_text(size = rel(.75)))
 
 ## ---- Parsing2 ----
 # 1980-2010
