@@ -1,0 +1,52 @@
+Raw Data Directory 
+
+airplane_crashes.csv
+--------------------------------------------------
+Date: Date of accident
+Time: Time of accident
+Location: Location of accident
+Operator: Airline that flew the plane
+Flight #: Flight number of the plane
+Route: Start and ending Location
+Type: Kind of plane that got into accident
+Registration: Registration number of airplane
+cn/In: Check in
+Aboard: Number of people on the flight
+Fatalities: Number of people that died
+Ground: Deaths on ground
+Summary: Summary of the what caused the accident
+
+
+aviation_data.txt
+--------------------------------------------------
+Event Id: ID of the event on website 
+Investigation Type: ID of the investigation 
+Accident Number: Number of the accident 
+Event Date: Date of the accident 
+Location: Location of accident
+Country: Country of accident
+Latitude: Latitude of accident 
+Longitude: Longitude of accident 
+Airport Code: Code number of airport 
+Airport Name: Name of airport
+Injury Severity: How servere the injuries were on average
+Aircraft Damage: How much damage there was to the aircraft
+Aircraft Category: Type of aircraft
+Registration Number: Registration number of airplane
+Make: Make of the airplane 
+Model: Model of the make of the airplane
+Amateur Built: Built by amateur
+Number of Engines: Number of engines
+Engine Type: What type of engines was used
+FAR Description: What part of the plane caused the accident
+Schedule: Was the flight scheduled
+Purpose of Flight: Purpose of the flight 
+Air Carrier: Airline
+Total Fatal Injuries: Number of fatal injuries 
+Total Serious Injuries: Number of serious injuries
+Total Minor Injuries: Number of minor injuries
+Total Uninjured: Number of people who were uninjured
+Weather Condition: Type of weather
+Broad Phase of Flight: What the flight was doing when the accident occured
+Report Status: Status of Report
+Publication Date: Date report was published 
